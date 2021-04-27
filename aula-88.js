@@ -5,6 +5,7 @@ const array = [1, 5, 23, 76, 87, 34, 687, 86, 98, 103, 489, 423, 89];
 
 const soma = ((...valores) =>  valores.reduce((acc, next) => acc + next));
 
+soma(...array)
 
 //2. Faça fetch dos dados através da aPI (https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772) e retorne a ficha desta refeição com id, nome, área (país de origem), ingredientes (em uma única string) e as intruções.
 //Formato:
