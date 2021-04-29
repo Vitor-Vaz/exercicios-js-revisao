@@ -22,7 +22,7 @@ const obj = { first: 'Jane', last: 'Doe' };
 const obj2 = { first: obj.first }
 
 
-//A partir do objeto abaixo, instancie uma variavel que receba ​name​ e outra para colors
+/*A partir do objeto abaixo, instancie uma variavel que receba ​name​ e outra para colors
 company = {
     name: 'ACME Corp',
     address: 'Nowhere st',
@@ -34,7 +34,11 @@ company = {
             colors: ['cyan', 'magenta', 'yellow'],
         },
     },
-};
+};*/
+
+const {name, products: {shirts: {colors: shirtsColors}}, products: {socks: {colors: socksColors} }} = company
+
+
 
 //Rest & Spread
 //Utilizando um operador clone o objeto c​lothes
@@ -111,27 +115,30 @@ const idade = dogs.reduce((acc, net) => acc + net.age, 0)//reutilizei o array al
 //Passe a expressão abaixo para Arrow Function e então use destructuring para pegar ​colors
 
 const getShirtsColorsAmount = company => {
-    const { colors } = company.producst.shirts;
-    return colors.length;
+    const {products: {shirts: {colors: allColors}} = company;
+
+    return allColors;
 
 }
 
+
 getShirtsColorsAmount(company)
 
-//A partir do objeto abaixo, desestruture e utilize ​spread operator​ para instaciar uma variável que tenha apenas os dados de roupas que não são calças, ou seja, somente ​shirts e​ ​ socks
+/*A partir do objeto abaixo, desestruture e utilize ​spread operator​ para instaciar uma variável que tenha apenas os dados de roupas que não são calças, ou seja, somente ​shirts e​ ​ socks
 const clothes = {
     pants: { colors: ['black', 'blue'] },
     shirts: { colors: ['white', 'red'] },
     socks: { colors: ['beige', 'gray'] },
-};
-const {shirts, socks} = clothes;
-let b = [];
-b = [...b, {shirts}, {socks}]
+};*/
+const {pants, ...rest} = clothes
 
 
 //Utilizando os dois arrays abaixo, desestruture cada array com spread para clonar todos itens menos o primeiro
 const arr = [1, 2, 3];
 const arr2 = [4, 5, 6];
+[, ...arr3] = arr;
+[, ...arr4] = arr2;
+const array5 = [...arr3, ...arr4];
 
 
 
@@ -145,3 +152,4 @@ var persons = [
 
 
 const pickName = (array) => array.map((item) => {return item.firstname});
+
